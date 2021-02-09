@@ -8,6 +8,5 @@ discordMusicBot(only JavaScript)
 - [ ] skip
 - [ ] auto
 
-
-
-
+## config 
+[DiscordGetToken](https://discord.com/developers/applications/)
