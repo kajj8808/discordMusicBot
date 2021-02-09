@@ -1,2 +1,8 @@
 # discordMusicBot
-discordMusicBot(Java Script)
+-discordMusicBot(only JavaScript)
+
+## Commad
+-[ ] play (url , search)
+-[ ] skip
+-[ ] auto
+
