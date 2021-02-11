@@ -4,7 +4,7 @@
 discordMusicBot(only JavaScript)
 
 ## Commad
-- [ ] play (url , search)
+- [x] play (url , search)
 - [ ] skip
 - [ ] auto
 
