@@ -2,7 +2,6 @@ const ytdl = require("ytdl-core");
 const fs = require("fs");
 const axios = require("axios");
 const songs = new Array();
-const request = require("request");
 const { YOUTUBE_API_KEY } = require("./config.json");
 
 const execute = async (msg, id, prefix) => {
