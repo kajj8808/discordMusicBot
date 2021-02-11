@@ -9,6 +9,6 @@ discordMusicBot(only JavaScript)
 - [ ] auto
 
 ## config 
-[DiscordGetToken](https://discord.com/developers/applications/)
+[Discord Get Token](https://discord.com/developers/applications/)
 
 [YouTube Data Api v3](https://console.developers.google.com/apis/credentials)
