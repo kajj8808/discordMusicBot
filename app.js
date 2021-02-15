@@ -1,6 +1,7 @@
 const { DISCODE_TOKEN, PREFIX } = require("./config.json");
 const Discord = require("discord.js");
-const { execute } = require("./function/execute");
+const { execute , skip} = require("./function/execute");
+const { helpEmbed } = require("./style/helpMsg");
 
 const app = new Discord.Client();
 app.login(DISCODE_TOKEN);
@@ -21,10 +22,12 @@ app.on("message", async (msg) => {
             return;
         }
     } else if (msg.content.startsWith(`${PREFIX}skip`)) {
-      //skip(serverId);
+      skip();
       return;
+    } else if (msg.content.startsWith(`${PREFIX}help`)) {
+      helpEmbed(PREFIX);
     } else {
-      msg.reply("You need to enter a valid Command!");
+      msg.reply(`You need to enter a valid Command!\n showing Commands=>${PREFIX}help`);
     }
     //msg.reply("You need to join a voice channel first!");
 });

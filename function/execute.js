@@ -1,8 +1,9 @@
 const youtube = require("./youtube");
-const { embed } = require("../style/discordMsg");
+const { embed } = require("../style/playMsg");
 const ytdl = require("ytdl-core-discord");
 const songs = new Array();
 let playing = false;
+
 const execute = async (msg, prefix) => {
     const word = msg.content.split(`${prefix}play `)[1];
     const voiceChannel = msg.member.voice.channel;
@@ -21,10 +22,13 @@ const play = async () => {
     if (!this.connection) {
         this.connection = await this.msg.member.voice.channel.join();
     }
-    if (!songs[0]) return this.msg.channel.send("Playlist is empty!💦");
     if (playing === true) {
         return this.msg.channel.send("Added to music playlist!🎧");
-    }   
+    } 
+    if (!songs[0]) {
+        this.connection.play("/skip");/* skip and playList none => play off */
+        return this.msg.channel.send("Playlist is empty!💦");
+    }
     const {
         order,
         videoId,
@@ -48,18 +52,23 @@ const play = async () => {
         play();
     }).on("error" , (err)=>{
         console.log(err);
+    }).on("failed" , (err)=>{
+        console.log(err);
     });
     return this.msg.channel.send(
         embed(order , title , videoId , likes , dislikes , viewCount , length , upDate , thumbnail)
     );
 };
 
-const skip = (id) => {
-    console.log("skip");
-    console.log(this.query[id]);
+const skip = () => {
+    playing = false;
+    songs.shift();
+    play();
 };
 //youtubeSearch("ブルーアーカイブ BGM");
-
+const auto = () =>{
+    play(true);//autoPlay.
+}
 module.exports = {
     execute : execute,
     play : play,

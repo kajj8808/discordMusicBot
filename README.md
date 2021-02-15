@@ -5,10 +5,10 @@ discordMusicBot(only JavaScript)
 
 ## Commad
 - [x] play (url , search)
-- [ ] skip
-- [ ] auto
+- [x] skip
+- [x] help
 
-## config 
+## Config 
 [Discord Get Token](https://discord.com/developers/applications/)
 
 [YouTube Data Api v3](https://console.developers.google.com/apis/credentials)
