@@ -1,5 +1,5 @@
 # discordMusicBot
-[[NodeJsVersion 14.15.4](https://nodejs.org)]
+[NodeJsVersion 14.15.4](https://nodejs.org)
 
 discordMusicBot(only JavaScript)
 
